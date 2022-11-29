@@ -1,0 +1,29 @@
+{% extends 'home.html' %}
+
+{% block common %}
+    {% include 'student_menu.html' %}
+    <br><br>
+    <br><br>
+
+    <h2 style="color: blue;text-align: center">Student {{ name|capfirst }} Profile</h2>
+
+    <table align="center" style="font-size: 25px">
+    <tr>
+        <th>Name :</th>
+        <th>{{ data.name }}</th>
+    </tr>
+
+    <tr>
+        <th>Age :</th>
+        <th>{{ data.age }}</th>
+    </tr>
+    <tr>
+        <th>Contact No :</th>
+        <th>{{ data.contactno }}</th>
+    </tr>
+    <tr>
+        <th>Gender :</th>
+        <th>{{ data.gender }}</th>
+    </tr>
+    </table>
+{% endblock %}

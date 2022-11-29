@@ -1,0 +1,8 @@
+{% extends 'home.html' %}
+
+{% block common %}
+    {% include 'student_menu.html' %}
+    <br><br>
+    <br><br>
+    <h2 style="text-align: center">Welcome {{ name|capfirst }}</h2>
+{% endblock %}

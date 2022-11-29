@@ -1,0 +1,31 @@
+{% extends 'home.html' %}
+
+{% block common %}
+    {% include 'admin_menu.html' %}
+    <table align="center" border="2">
+
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Contact No</th>
+        <th>Gender</th>
+        <th>Username</th>
+        <th>Student delete</th>
+
+    </tr>
+
+            {% for x in data %}
+                <tr>
+                <th>{{ x.name }}</th>
+                <th>{{ x.age }}</th>
+                <th>{{ x.contactno }}</th>
+                <th>{{ x.gender }}</th>
+                <th>{{ x.username }}</th>
+                <th><a href="{% url 'adview_profile' %}">Delete</a></th>
+                </tr>
+
+            {% endfor %}
+
+    </table>
+
+{% endblock %}

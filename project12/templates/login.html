@@ -1,0 +1,36 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block common %}
+    {% include 'main_menu.html' %}
+    <br>
+    <form action="{% url 'slogin' %}" method="post" >
+    {% csrf_token %}
+    <table align="center">
+    <tr>
+        <h1 align="center" style="color: #0c39ff">Student Login</h1>
+    </tr>
+        <tr>
+            <th rowspan="4"><img src="{% static 'images/Student.png' %}" width="150px" height="150px"></th>
+        </tr>
+
+    <tr>
+        <th><input type="text" placeholder="Username" required name="t1"></th>
+        </tr>
+        <tr>
+        <th><input type="password" placeholder="password" required name="t2"></th>
+    </tr>
+    <tr align="center">
+        <th><button type="submit" class="btn btn-success">Login</button></th>
+    </tr>
+    </table>
+    </form>
+
+    {% if message %}
+        <br><br><h3 align="center">{{ message }}</h3>
+    {% endif %}
+    {% if note %}
+        <br><br><h3 align="center"> {{ note }}</h3>
+    {% endif %}
+
+{% endblock %}

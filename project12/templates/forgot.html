@@ -1,0 +1,50 @@
+{% extends 'home.html' %}
+
+{% block common %}
+    {% include 'main_menu.html' %}
+
+    <br><br>
+    <br><br>
+    <form action="{% url 'check_password' %}" method="post">
+    {% csrf_token %}
+    <table align="center">
+    <tr>
+        <th>
+            <input type="text" placeholder="Username" required name="p1">
+        </th>
+    </tr>
+
+    <tr>
+        <th>
+            <input type="number" placeholder="Contact No" required name="p2">
+        </th>
+    </tr>
+
+    <tr>
+        <th style="text-align: center">
+            <button type="submit">Submit</button>
+        </th>
+
+    </table>
+    </form>
+
+    <table align="center">
+      <tr>
+        <th>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+         <strong>
+             {% if data %}
+      Your password is :{{ data.password }}
+      {% else %}
+          {{ eror }}
+      {% endif %}
+  </strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div></th>
+
+    </tr>
+    </table>
+
+{% endblock %}
